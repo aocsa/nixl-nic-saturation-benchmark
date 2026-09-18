@@ -1,0 +1,47 @@
+{
+  "batch": 8,
+  "block_size": 16777216,
+  "elapsed_s": 2.049370627850294,
+  "gb_moved": 53.6870912,
+  "gbps": 209.5749415763436,
+  "gbs": 26.19686769704295,
+  "group": "o2m-i02",
+  "host": "pdx02-zeno-02",
+  "iters": 200,
+  "name": "init-02",
+  "nic_delta": {
+    "enP2p1s0f0np0": {
+      "port_rcv_data": 532720,
+      "port_xmit_data": 4253712000,
+      "rx_bytes": 21478,
+      "tx_bytes": 425829
+    },
+    "enP2p1s0f1np1": {
+      "port_rcv_data": 529774,
+      "port_xmit_data": 4253712000,
+      "rx_bytes": 17488,
+      "tx_bytes": 49197
+    },
+    "enp1s0f0np0": {
+      "port_rcv_data": 543914,
+      "port_xmit_data": 4253712019,
+      "rx_bytes": 2236699,
+      "tx_bytes": 446965
+    },
+    "enp1s0f1np1": {
+      "port_rcv_data": 535292,
+      "port_xmit_data": 4253712000,
+      "rx_bytes": 1689845,
+      "tx_bytes": 1014625
+    }
+  },
+  "peers": [
+    "tgt-01",
+    "tgt-03"
+  ],
+  "rail": "dual",
+  "role": "initiator",
+  "scheme": "onetomany",
+  "ucx_net_devices": "rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1",
+  "ucx_tls": "rc,ud,sm,self"
+}

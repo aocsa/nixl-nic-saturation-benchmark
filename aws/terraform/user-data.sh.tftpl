@@ -1,0 +1,23 @@
+#!/bin/bash
+set -euxo pipefail
+export DEBIAN_FRONTEND=noninteractive
+apt-get update -y
+apt-get install -y python3 python3-pip python3-venv git curl iperf3 build-essential
+install -d -o ubuntu -g ubuntu /opt/nixl-bench
+if [[ ! -d /opt/nixl-bench/.git ]]; then
+  sudo -u ubuntu git clone "${repo_url}" /opt/nixl-bench || true
+fi
+# EFA installer: skip if already present (DLAMI). First-boot kmod install needs a reboot.
+if [[ ! -d /opt/amazon/efa ]]; then
+  curl -fsSL -o /tmp/aws-efa-installer.tar.gz \
+    https://efa-installer.amazonaws.com/aws-efa-installer-1.50.0.tar.gz
+  tar -C /tmp -xzf /tmp/aws-efa-installer.tar.gz
+  if lsmod | grep -q '^efa'; then
+    /tmp/aws-efa-installer/efa_installer.sh -y --skip-kmod --skip-limit-conf
+  else
+    /tmp/aws-efa-installer/efa_installer.sh -y
+  fi
+fi
+echo 0 > /proc/sys/kernel/yama/ptrace_scope || true
+sudo -u ubuntu python3 -m pip install --user 'numpy>=1.26' 'nixl>=0.4.1' || true
+touch /var/lib/nixl-bench-user-data.done

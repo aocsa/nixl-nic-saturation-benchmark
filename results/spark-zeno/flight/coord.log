@@ -1,0 +1,113 @@
+# 23:52:58 wait workers {'zeno-03', 'zeno-01'} up to 1200s
+# 23:52:58 on zeno-01: curl -fsSL http://10.87.131.182:8775/flight-bench/start-worker.sh | bash -s zeno-01
+# 23:52:58 on zeno-03: curl -fsSL http://10.87.131.182:8775/flight-bench/start-worker.sh | bash -s zeno-03
+Traceback (most recent call last):
+  File "/home/aocsa/git/flight-bench/coord.py", line 400, in <module>
+    main()
+  File "/home/aocsa/git/flight-bench/coord.py", line 366, in main
+    wait_workers()
+  File "/home/aocsa/git/flight-bench/coord.py", line 123, in wait_workers
+    raise TimeoutError(f"workers not ready: {pending}")
+TimeoutError: workers not ready: {'zeno-03', 'zeno-01'}
+8775/flight-bench/start-worker.sh | bash -s zeno-01
+# 00:05:27 on zeno-03: curl -fsSL http://10.87.131.182:8775/flight-bench/start-worker.sh | bash -s zeno-03
+# 00:14:08 worker zeno-03 ready
+# 00:14:10 worker zeno-03 ready
+# 00:14:29 worker zeno-01 ready
+# 00:14:29 ==== iperf one twin ====
+# 00:14:29 posted zeno-01/0 iperf_server iperf-f0a
+# 00:14:31 worker zeno-01 ready
+# 00:14:31 ==== iperf one twin ====
+# 00:14:31 posted zeno-01/0 iperf_server iperf-f0a
+# 00:14:32 LOCAL /home/aocsa/.local/bin/iperf3 -c 10.87.131.64 -B 10.87.131.68 -p 5201 -t 10 -P 8 -J
+# 00:14:32 LOCAL /home/aocsa/.local/bin/iperf3 -c 10.87.131.64 -B 10.87.131.68 -p 5201 -t 10 -P 8 -J
+# 00:14:32 posted zeno-01/1 kill None
+# 00:14:32 posted zeno-01/1 kill None
+# 00:14:32 saved /home/aocsa/git/flight-bench/results/iperf-f0a.json
+# 00:14:32 iperf-f0a None GB/s ok=False
+# 00:14:32 one-twin iperf did not hit ~12 GB/s; continuing to document
+# 00:14:32 ==== iperf both twins ====
+# 00:14:32 saved /home/aocsa/git/flight-bench/results/iperf-f0a.json
+# 00:14:32 iperf-f0a 0.0 GB/s ok=False
+# 00:14:32 one-twin iperf did not hit ~12 GB/s; continuing to document
+# 00:14:32 ==== iperf both twins ====
+# 00:14:32 posted zeno-01/2 iperf_server iperf-f0-both
+# 00:14:32 posted zeno-01/2 iperf_server iperf-f0-both
+# 00:14:32 posted zeno-01/3 iperf_server iperf-f0-both
+# 00:14:32 posted zeno-01/3 iperf_server iperf-f0-both
+# 00:14:33 LOCAL /home/aocsa/.local/bin/iperf3 -c 10.87.131.64 -B 10.87.131.68 -p 5201 -t 10 -P 8 -J
+# 00:14:33 LOCAL /home/aocsa/.local/bin/iperf3 -c 10.87.131.64 -B 10.87.131.68 -p 5201 -t 10 -P 8 -J
+# 00:14:33 LOCAL /home/aocsa/.local/bin/iperf3 -c 10.87.131.66 -B 10.87.131.70 -p 5202 -t 10 -P 8 -J
+# 00:14:33 LOCAL /home/aocsa/.local/bin/iperf3 -c 10.87.131.66 -B 10.87.131.70 -p 5202 -t 10 -P 8 -J
+# 00:14:43 posted zeno-01/4 kill None
+# 00:14:43 posted zeno-01/4 kill None
+# 00:14:43 saved /home/aocsa/git/flight-bench/results/iperf-f0-both.json
+# 00:14:43 saved /home/aocsa/git/flight-bench/results/iperf-f0-both.json
+# 00:14:43 iperf-f0-both 11.26241344148788 GB/s ok=False
+# 00:14:43 both-twin TCP gate failed; Flight cannot beat this
+# 00:14:43 ==== one-to-one DoPut ====
+# 00:14:43 iperf-f0-both 12.55310860349566 GB/s ok=False
+# 00:14:43 both-twin TCP gate failed; Flight cannot beat this
+# 00:14:43 ==== one-to-one DoPut ====
+# 00:14:43 posted zeno-01/5 server o2o-f0
+# 00:14:43 posted zeno-01/5 server o2o-f0
+# 00:14:45 server ack zeno-01 rc=0
+# 00:14:45 server ack zeno-01 rc=0
+# 00:14:45 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.64 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.68
+# 00:14:45 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.64 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.68
+# 00:14:45 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.66 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.70
+# 00:14:45 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.66 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.70
+# 00:14:51 posted zeno-01/6 kill None
+# 00:14:51 posted zeno-01/6 kill None
+# 00:14:51 saved /home/aocsa/git/flight-bench/results/o2o-f0.json
+# 00:14:51 saved /home/aocsa/git/flight-bench/results/o2o-f0.json
+# 00:14:51 ==== one-to-many DoPut ====
+# 00:14:51 ==== one-to-many DoPut ====
+# 00:14:51 posted zeno-01/7 server o2m-f0
+# 00:14:51 posted zeno-01/7 server o2m-f0
+# 00:14:53 server ack zeno-01 rc=0
+# 00:14:53 server ack zeno-01 rc=0
+# 00:14:53 posted zeno-03/0 server o2m-f0
+# 00:14:53 posted zeno-03/0 server o2m-f0
+# 00:14:55 server ack zeno-03 rc=0
+# 00:14:55 server ack zeno-03 rc=0
+# 00:14:56 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.64 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.68
+# 00:14:56 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.66 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.70
+# 00:14:56 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.64 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.68
+# 00:14:56 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.66 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.70
+# 00:14:56 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.72 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.68
+# 00:14:56 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.72 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.68
+# 00:14:56 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.74 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.70
+# 00:14:56 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.74 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.70
+# 00:15:06 posted zeno-01/8 kill None
+# 00:15:06 posted zeno-03/1 kill None
+# 00:15:06 saved /home/aocsa/git/flight-bench/results/o2m-f0.json
+# 00:15:06 ==== many-to-one DoPut ====
+# 00:15:06 posted zeno-01/8 kill None
+# 00:15:06 posted zeno-03/1 kill None
+# 00:15:06 saved /home/aocsa/git/flight-bench/results/o2m-f0.json
+# 00:15:06 ==== many-to-one DoPut ====
+# 00:15:06 SERVER /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-perf-server -server_host=10.87.131.68 -port=31337 -transport=grpc
+# 00:15:06 SERVER /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-perf-server -server_host=10.87.131.68 -port=31337 -transport=grpc
+# 00:15:08 posted zeno-01/9 clients m2o-f0
+# 00:15:08 posted zeno-03/2 clients m2o-f0
+# 00:15:08 posted zeno-01/9 clients m2o-f0
+# 00:15:08 posted zeno-03/2 clients m2o-f0
+# 00:15:15 saved /home/aocsa/git/flight-bench/results/m2o-f0.json
+# 00:15:15 summary:
+group,scheme,gbs,gbps,ok,notes
+iperf-f0a,iperf-one-twin,0.0,0.0,False,
+iperf-f0-both,iperf-both-twins,12.55310860349566,100.42486882796528,False,
+o2o-f0,one-to-one,6.634965311772016,53.07972249417613,True,02->01 f0 both twins
+o2m-f0,one-to-many,6.938275390405496,55.50620312324397,True,02->01+03 f0
+m2o-f0,many-to-one,14.245443889695068,113.96355111756054,True,01+03->02 f0
+# 00:15:15 posted STOP
+# 00:15:15 saved /home/aocsa/git/flight-bench/results/m2o-f0.json
+# 00:15:15 summary:
+group,scheme,gbs,gbps,ok,notes
+iperf-f0a,iperf-one-twin,None,None,False,
+iperf-f0-both,iperf-both-twins,11.26241344148788,90.09930753190304,False,
+o2o-f0,one-to-one,6.624416239674012,52.9953299173921,True,02->01 f0 both twins
+o2m-f0,one-to-many,6.951580491042338,55.612643928338706,True,02->01+03 f0
+m2o-f0,many-to-one,14.245443889695068,113.96355111756054,True,01+03->02 f0
+# 00:15:15 posted STOP

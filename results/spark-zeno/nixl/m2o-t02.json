@@ -1,0 +1,95 @@
+{
+  "group": "m2o-t02",
+  "init-01": {
+    "batch": 8,
+    "block_size": 16777216,
+    "elapsed_s": 2.1906106248497963,
+    "gb_moved": 26.8435456,
+    "gbps": 98.03128057717909,
+    "gbs": 12.253910072147386,
+    "group": "m2o-t02",
+    "host": "pdx02-zeno-01",
+    "iters": 200,
+    "name": "init-01",
+    "nic_delta": {
+      "enP2p1s0f0np0": {
+        "port_rcv_data": 361603,
+        "port_xmit_data": 2929106077,
+        "rx_bytes": 524168,
+        "tx_bytes": 80910
+      },
+      "enP2p1s0f1np1": {
+        "port_rcv_data": 339343,
+        "port_xmit_data": 2914620173,
+        "rx_bytes": 2369181,
+        "tx_bytes": 381345
+      },
+      "enp1s0f0np0": {
+        "port_rcv_data": 392110,
+        "port_xmit_data": 2774029739,
+        "rx_bytes": 1366928,
+        "tx_bytes": 1034104
+      },
+      "enp1s0f1np1": {
+        "port_rcv_data": 372213,
+        "port_xmit_data": 2785084588,
+        "rx_bytes": 185300,
+        "tx_bytes": 410238
+      }
+    },
+    "peers": [
+      "tgt-02"
+    ],
+    "rail": "dual",
+    "role": "initiator",
+    "scheme": "pairwise",
+    "ucx_net_devices": "rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1",
+    "ucx_tls": "rc,ud,sm,self"
+  },
+  "init-03": {
+    "batch": 8,
+    "block_size": 16777216,
+    "elapsed_s": 2.800971678458154,
+    "gb_moved": 26.8435456,
+    "gbps": 76.66923819744302,
+    "gbs": 9.583654774680378,
+    "group": "m2o-t02",
+    "host": "pdx02-zeno-03",
+    "iters": 200,
+    "name": "init-03",
+    "nic_delta": {
+      "enP2p1s0f0np0": {
+        "port_rcv_data": 366545,
+        "port_xmit_data": 2985152001,
+        "rx_bytes": 1410733,
+        "tx_bytes": 735771
+      },
+      "enP2p1s0f1np1": {
+        "port_rcv_data": 344104,
+        "port_xmit_data": 2893249936,
+        "rx_bytes": 1018868,
+        "tx_bytes": 1340470
+      },
+      "enp1s0f0np0": {
+        "port_rcv_data": 382298,
+        "port_xmit_data": 2670066031,
+        "rx_bytes": 1345093,
+        "tx_bytes": 241677
+      },
+      "enp1s0f1np1": {
+        "port_rcv_data": 369271,
+        "port_xmit_data": 2740787050,
+        "rx_bytes": 1314746,
+        "tx_bytes": 1828415
+      }
+    },
+    "peers": [
+      "tgt-02"
+    ],
+    "rail": "dual",
+    "role": "initiator",
+    "scheme": "pairwise",
+    "ucx_net_devices": "rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1",
+    "ucx_tls": "rc,ud,sm,self"
+  }
+}

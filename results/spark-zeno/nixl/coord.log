@@ -1,0 +1,202 @@
+# 19:45:24 ==== p12-f0 zeno-01->zeno-02 rail=f0 ====
+# 19:45:24 posted zeno-01/0 p12-f0 target
+# 19:45:25 LOCAL python3 -u /home/aocsa/git/nixl-bench/sat.py --rail f0 --role initiator --name init-02 --scheme pairwise --targets tgt-01@10.87.131.181:5551 --listen-port 5552 --group p12-f0 --block-size 67108864 --batch 8 --iters 200 --warmup 50
+# 19:45:25 role=initiator name=init-02 scheme=pairwise group=p12-f0 rail=f0 UCX_NET_DEVICES=rocep1s0f0:1,roceP2p1s0f0:1 UCX_MAX_RMA_RAILS=2
+W0917 19:45:27.329169 4133733 ucx_utils.cpp:628] 1 NVIDIA GPU(s) were detected, but UCX CUDA support was not found! GPU memory is not supported.
+2026-09-17 19:45:27 NIXL INFO    _api.py:407 Backend UCX was instantiated
+2026-09-17 19:45:27 NIXL INFO    _api.py:285 Initialized NIXL agent: init-02
+# 19:45:27 agent init-02 listen=5552 host=pdx02-zeno-02
+# 19:45:27 registered 536870912B batch=8
+# 19:45:27 published md init-02 1049B
+# 19:45:27 loaded md tgt-01 -> b'tgt-01'
+# 19:45:27 xfer handle ready for tgt-01
+# 19:45:27 peer ready tgt-01
+{"error": "NIXL_ERR_REMOTE_DISCONNECT", "host": "pdx02-zeno-02", "role": ["/home/aocsa/git/nixl-bench/sat.py", "--rail", "f0", "--role", "initiator", "--name", "init-02", "--scheme", "pairwise", "--targets", "tgt-01@10.87.131.181:5551", "--listen-port", "5552", "--group", "p12-f0", "--block-size", "67108864", "--batch", "8", "--iters", "200", "--warmup", "50"]}
+Traceback (most recent call last):
+  File "/home/aocsa/git/nixl-bench/sat.py", line 389, in <module>
+    main()
+  File "/home/aocsa/git/nixl-bench/sat.py", line 384, in main
+    run_initiator(args, peers)
+  File "/home/aocsa/git/nixl-bench/sat.py", line 311, in run_initiator
+    elapsed = timed_writes(agent, handles[0][1], args.iters, args.warmup)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aocsa/git/nixl-bench/sat.py", line 133, in timed_writes
+    wait_done(agent, handle)
+  File "/home/aocsa/git/nixl-bench/sat.py", line 105, in wait_done
+    st = agent.check_xfer_state(handle)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aocsa/.local/lib/python3.12/site-packages/nixl_cu13/_api.py", line 665, in check_xfer_state
+    status = self.agent.getXferStatus(handle._handle)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+nixl_cu13._bindings.nixlRemoteDisconnectError: NIXL_ERR_REMOTE_DISCONNECT
+W0917 19:45:42.557312 4133733 nixl_agent.cpp:265] Communication thread has thrown an exception: std::bad_alloc
+# 19:47:20 ==== p12-f0 zeno-01->zeno-02 rail=f0 ====
+# 19:47:20 posted zeno-01/1 p12-f0 target
+# 19:47:21 LOCAL python3 -u /home/aocsa/git/nixl-bench/sat.py --rail f0 --role initiator --name init-02 --scheme pairwise --targets tgt-01@10.87.131.181:5551 --listen-port 5552 --group p12-f0 --block-size 16777216 --batch 8 --iters 200 --warmup 50
+# 19:47:21 role=initiator name=init-02 scheme=pairwise group=p12-f0 rail=f0 UCX_NET_DEVICES=rocep1s0f0:1,roceP2p1s0f0:1 UCX_MAX_RMA_RAILS=2
+W0917 19:47:22.971545 4134370 ucx_utils.cpp:628] 1 NVIDIA GPU(s) were detected, but UCX CUDA support was not found! GPU memory is not supported.
+2026-09-17 19:47:23 NIXL INFO    _api.py:407 Backend UCX was instantiated
+2026-09-17 19:47:23 NIXL INFO    _api.py:285 Initialized NIXL agent: init-02
+# 19:47:23 agent init-02 listen=5552 host=pdx02-zeno-02
+# 19:47:23 registered 134217728B batch=8
+# 19:47:23 published md init-02 1049B
+# 19:47:23 loaded md tgt-01 -> b'tgt-01'
+# 19:47:23 xfer handle ready for tgt-01
+# 19:47:23 peer ready tgt-01
+{"batch": 8, "block_size": 16777216, "elapsed_s": 1.098538737744093, "gb_moved": 26.8435456, "gbps": 195.48547303939145, "gbs": 24.43568412992393, "group": "p12-f0", "host": "pdx02-zeno-02", "iters": 200, "name": "init-02", "nic_delta": {"enP2p1s0f0np0": {"port_rcv_data": 496124, "port_xmit_data": 4253704000, "rx_bytes": 856293, "tx_bytes": 510864}, "enP2p1s0f1np1": {"port_rcv_data": 0, "port_xmit_data": 0, "rx_bytes": 1216237, "tx_bytes": 201228}, "enp1s0f0np0": {"port_rcv_data": 496124, "port_xmit_data": 4253704000, "rx_bytes": 11624, "tx_bytes": 19371}, "enp1s0f1np1": {"port_rcv_data": 0, "port_xmit_data": 0, "rx_bytes": 8340, "tx_bytes": 771836}}, "peers": ["tgt-01"], "rail": "f0", "role": "initiator", "scheme": "pairwise", "ucx_net_devices": "rocep1s0f0:1,roceP2p1s0f0:1", "ucx_tls": "rc,ud,sm,self"}
+W0917 19:47:24.577710 4134370 nixl_agent.cpp:265] Communication thread has thrown an exception: std::bad_alloc
+# 19:47:24 saved /home/aocsa/git/nixl-bench/results/p12-f0.json
+# 19:47:24 p12-f0 24.43568412992393 GB/s
+# 19:47:25 ==== p12-f1 zeno-01->zeno-02 rail=f1 ====
+# 19:47:25 posted zeno-01/2 p12-f1 target
+# 19:47:26 LOCAL python3 -u /home/aocsa/git/nixl-bench/sat.py --rail f1 --role initiator --name init-02 --scheme pairwise --targets tgt-01@10.87.131.181:5551 --listen-port 5552 --group p12-f1 --block-size 16777216 --batch 8 --iters 200 --warmup 50
+# 19:47:27 role=initiator name=init-02 scheme=pairwise group=p12-f1 rail=f1 UCX_NET_DEVICES=rocep1s0f1:1,roceP2p1s0f1:1 UCX_MAX_RMA_RAILS=2
+W0917 19:47:28.410582 4134427 ucx_utils.cpp:628] 1 NVIDIA GPU(s) were detected, but UCX CUDA support was not found! GPU memory is not supported.
+2026-09-17 19:47:28 NIXL INFO    _api.py:407 Backend UCX was instantiated
+2026-09-17 19:47:28 NIXL INFO    _api.py:285 Initialized NIXL agent: init-02
+# 19:47:28 agent init-02 listen=5552 host=pdx02-zeno-02
+# 19:47:28 registered 134217728B batch=8
+# 19:47:28 published md init-02 1049B
+# 19:47:28 loaded md tgt-01 -> b'tgt-01'
+# 19:47:28 xfer handle ready for tgt-01
+# 19:47:28 peer ready tgt-01
+{"batch": 8, "block_size": 16777216, "elapsed_s": 1.0985212810337543, "gb_moved": 26.8435456, "gbps": 195.48857951838022, "gbs": 24.436072439797528, "group": "p12-f1", "host": "pdx02-zeno-02", "iters": 200, "name": "init-02", "nic_delta": {"enP2p1s0f0np0": {"port_rcv_data": 0, "port_xmit_data": 0, "rx_bytes": 416822, "tx_bytes": 454194}, "enP2p1s0f1np1": {"port_rcv_data": 496155, "port_xmit_data": 4253704000, "rx_bytes": 15134, "tx_bytes": 20685}, "enp1s0f0np0": {"port_rcv_data": 0, "port_xmit_data": 0, "rx_bytes": 22693, "tx_bytes": 71187}, "enp1s0f1np1": {"port_rcv_data": 496031, "port_xmit_data": 4253704000, "rx_bytes": 1582938, "tx_bytes": 1019778}}, "peers": ["tgt-01"], "rail": "f1", "role": "initiator", "scheme": "pairwise", "ucx_net_devices": "rocep1s0f1:1,roceP2p1s0f1:1", "ucx_tls": "rc,ud,sm,self"}
+W0917 19:47:30.018938 4134427 nixl_agent.cpp:265] Communication thread has thrown an exception: std::bad_alloc
+# 19:47:30 saved /home/aocsa/git/nixl-bench/results/p12-f1.json
+# 19:47:30 p12-f1 24.436072439797528 GB/s
+# 19:47:31 ==== p12-dual zeno-01->zeno-02 rail=dual ====
+# 19:47:31 posted zeno-01/3 p12-dual target
+# 19:47:32 LOCAL python3 -u /home/aocsa/git/nixl-bench/sat.py --rail dual --role initiator --name init-02 --scheme pairwise --targets tgt-01@10.87.131.181:5551 --listen-port 5552 --group p12-dual --block-size 16777216 --batch 8 --iters 200 --warmup 50
+# 19:47:32 role=initiator name=init-02 scheme=pairwise group=p12-dual rail=dual UCX_NET_DEVICES=rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1 UCX_MAX_RMA_RAILS=4
+W0917 19:47:33.871814 4134493 ucx_utils.cpp:628] 1 NVIDIA GPU(s) were detected, but UCX CUDA support was not found! GPU memory is not supported.
+2026-09-17 19:47:34 NIXL INFO    _api.py:407 Backend UCX was instantiated
+2026-09-17 19:47:34 NIXL INFO    _api.py:285 Initialized NIXL agent: init-02
+# 19:47:34 agent init-02 listen=5552 host=pdx02-zeno-02
+# 19:47:34 registered 134217728B batch=8
+# 19:47:34 published md init-02 1399B
+# 19:47:34 loaded md tgt-01 -> b'tgt-01'
+# 19:47:34 xfer handle ready for tgt-01
+# 19:47:34 peer ready tgt-01
+{"batch": 8, "block_size": 16777216, "elapsed_s": 1.1290446370840073, "gb_moved": 26.8435456, "gbps": 190.20360909257965, "gbs": 23.775451136572457, "group": "p12-dual", "host": "pdx02-zeno-02", "iters": 200, "name": "init-02", "nic_delta": {"enP2p1s0f0np0": {"port_rcv_data": 279139, "port_xmit_data": 2126856000, "rx_bytes": 8783, "tx_bytes": 395603}, "enP2p1s0f1np1": {"port_rcv_data": 272846, "port_xmit_data": 2126856000, "rx_bytes": 9128, "tx_bytes": 4461}, "enp1s0f0np0": {"port_rcv_data": 279388, "port_xmit_data": 2126856000, "rx_bytes": 2018220, "tx_bytes": 409778}, "enp1s0f1np1": {"port_rcv_data": 273343, "port_xmit_data": 2126856000, "rx_bytes": 10056, "tx_bytes": 768883}}, "peers": ["tgt-01"], "rail": "dual", "role": "initiator", "scheme": "pairwise", "ucx_net_devices": "rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1", "ucx_tls": "rc,ud,sm,self"}
+# 19:47:35 saved /home/aocsa/git/nixl-bench/results/p12-dual.json
+# 19:47:35 p12-dual 23.775451136572457 GB/s
+# 19:47:36 ==== p13-f0 zeno-03->zeno-01 rail=f0 ====
+# 19:47:36 posted zeno-03/0 p13-f0 target
+# 19:47:37 posted zeno-01/4 p13-f0 initiator
+# 19:47:41 saved /home/aocsa/git/nixl-bench/results/p13-f0.json
+# 19:47:41 p13-f0 24.420143889514705 GB/s
+# 19:47:42 ==== p13-f1 zeno-03->zeno-01 rail=f1 ====
+# 19:47:42 posted zeno-03/1 p13-f1 target
+# 19:47:43 posted zeno-01/5 p13-f1 initiator
+# 19:47:47 saved /home/aocsa/git/nixl-bench/results/p13-f1.json
+# 19:47:47 p13-f1 24.433931834184342 GB/s
+# 19:47:48 ==== p13-dual zeno-03->zeno-01 rail=dual ====
+# 19:47:48 posted zeno-03/2 p13-dual target
+# 19:47:49 posted zeno-01/6 p13-dual initiator
+# 19:47:52 saved /home/aocsa/git/nixl-bench/results/p13-dual.json
+# 19:47:52 p13-dual 23.76976201247816 GB/s
+# 19:47:53 ==== p23-f0 zeno-03->zeno-02 rail=f0 ====
+# 19:47:53 posted zeno-03/3 p23-f0 target
+# 19:47:55 LOCAL python3 -u /home/aocsa/git/nixl-bench/sat.py --rail f0 --role initiator --name init-02 --scheme pairwise --targets tgt-03@10.87.131.183:5553 --listen-port 5552 --group p23-f0 --block-size 16777216 --batch 8 --iters 200 --warmup 50
+# 19:47:55 role=initiator name=init-02 scheme=pairwise group=p23-f0 rail=f0 UCX_NET_DEVICES=rocep1s0f0:1,roceP2p1s0f0:1 UCX_MAX_RMA_RAILS=2
+W0917 19:47:56.610320 4134661 ucx_utils.cpp:628] 1 NVIDIA GPU(s) were detected, but UCX CUDA support was not found! GPU memory is not supported.
+2026-09-17 19:47:56 NIXL INFO    _api.py:407 Backend UCX was instantiated
+2026-09-17 19:47:56 NIXL INFO    _api.py:285 Initialized NIXL agent: init-02
+# 19:47:56 agent init-02 listen=5552 host=pdx02-zeno-02
+# 19:47:56 registered 134217728B batch=8
+# 19:47:56 published md init-02 1049B
+# 19:47:56 loaded md tgt-03 -> b'tgt-03'
+# 19:47:56 xfer handle ready for tgt-03
+# 19:47:56 peer ready tgt-03
+{"batch": 8, "block_size": 16777216, "elapsed_s": 1.0983984731137753, "gb_moved": 26.8435456, "gbps": 195.51043638218508, "gbs": 24.438804547773135, "group": "p23-f0", "host": "pdx02-zeno-02", "iters": 200, "name": "init-02", "nic_delta": {"enP2p1s0f0np0": {"port_rcv_data": 496124, "port_xmit_data": 4253704000, "rx_bytes": 7984, "tx_bytes": 397983}, "enP2p1s0f1np1": {"port_rcv_data": 0, "port_xmit_data": 0, "rx_bytes": 1281616, "tx_bytes": 224724}, "enp1s0f0np0": {"port_rcv_data": 496124, "port_xmit_data": 4253704000, "rx_bytes": 768593, "tx_bytes": 195896}, "enp1s0f1np1": {"port_rcv_data": 0, "port_xmit_data": 0, "rx_bytes": 11552, "tx_bytes": 770679}}, "peers": ["tgt-03"], "rail": "f0", "role": "initiator", "scheme": "pairwise", "ucx_net_devices": "rocep1s0f0:1,roceP2p1s0f0:1", "ucx_tls": "rc,ud,sm,self"}
+# 19:47:58 saved /home/aocsa/git/nixl-bench/results/p23-f0.json
+# 19:47:58 p23-f0 24.438804547773135 GB/s
+# 19:47:59 ==== p23-f1 zeno-03->zeno-02 rail=f1 ====
+# 19:47:59 posted zeno-03/4 p23-f1 target
+# 19:48:00 LOCAL python3 -u /home/aocsa/git/nixl-bench/sat.py --rail f1 --role initiator --name init-02 --scheme pairwise --targets tgt-03@10.87.131.183:5553 --listen-port 5552 --group p23-f1 --block-size 16777216 --batch 8 --iters 200 --warmup 50
+# 19:48:00 role=initiator name=init-02 scheme=pairwise group=p23-f1 rail=f1 UCX_NET_DEVICES=rocep1s0f1:1,roceP2p1s0f1:1 UCX_MAX_RMA_RAILS=2
+W0917 19:48:02.062622 4134717 ucx_utils.cpp:628] 1 NVIDIA GPU(s) were detected, but UCX CUDA support was not found! GPU memory is not supported.
+2026-09-17 19:48:02 NIXL INFO    _api.py:407 Backend UCX was instantiated
+2026-09-17 19:48:02 NIXL INFO    _api.py:285 Initialized NIXL agent: init-02
+# 19:48:02 agent init-02 listen=5552 host=pdx02-zeno-02
+# 19:48:02 registered 134217728B batch=8
+# 19:48:02 published md init-02 1049B
+# 19:48:02 loaded md tgt-03 -> b'tgt-03'
+# 19:48:02 xfer handle ready for tgt-03
+# 19:48:02 peer ready tgt-03
+{"batch": 8, "block_size": 16777216, "elapsed_s": 1.0985612161457539, "gb_moved": 26.8435456, "gbps": 195.4814730793371, "gbs": 24.435184134917137, "group": "p23-f1", "host": "pdx02-zeno-02", "iters": 200, "name": "init-02", "nic_delta": {"enP2p1s0f0np0": {"port_rcv_data": 0, "port_xmit_data": 0, "rx_bytes": 2083452, "tx_bytes": 704140}, "enP2p1s0f1np1": {"port_rcv_data": 496248, "port_xmit_data": 4253704000, "rx_bytes": 13060, "tx_bytes": 8457}, "enp1s0f0np0": {"port_rcv_data": 0, "port_xmit_data": 0, "rx_bytes": 13776, "tx_bytes": 94246}, "enp1s0f1np1": {"port_rcv_data": 496124, "port_xmit_data": 4253704000, "rx_bytes": 18149, "tx_bytes": 777523}}, "peers": ["tgt-03"], "rail": "f1", "role": "initiator", "scheme": "pairwise", "ucx_net_devices": "rocep1s0f1:1,roceP2p1s0f1:1", "ucx_tls": "rc,ud,sm,self"}
+W0917 19:48:03.666563 4134717 nixl_agent.cpp:265] Communication thread has thrown an exception: std::bad_alloc
+# 19:48:03 saved /home/aocsa/git/nixl-bench/results/p23-f1.json
+# 19:48:03 p23-f1 24.435184134917137 GB/s
+# 19:48:04 ==== p23-dual zeno-03->zeno-02 rail=dual ====
+# 19:48:04 posted zeno-03/5 p23-dual target
+# 19:48:06 LOCAL python3 -u /home/aocsa/git/nixl-bench/sat.py --rail dual --role initiator --name init-02 --scheme pairwise --targets tgt-03@10.87.131.183:5553 --listen-port 5552 --group p23-dual --block-size 16777216 --batch 8 --iters 200 --warmup 50
+# 19:48:06 role=initiator name=init-02 scheme=pairwise group=p23-dual rail=dual UCX_NET_DEVICES=rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1 UCX_MAX_RMA_RAILS=4
+W0917 19:48:07.519313 4134780 ucx_utils.cpp:628] 1 NVIDIA GPU(s) were detected, but UCX CUDA support was not found! GPU memory is not supported.
+2026-09-17 19:48:07 NIXL INFO    _api.py:407 Backend UCX was instantiated
+2026-09-17 19:48:07 NIXL INFO    _api.py:285 Initialized NIXL agent: init-02
+# 19:48:07 agent init-02 listen=5552 host=pdx02-zeno-02
+# 19:48:07 registered 134217728B batch=8
+# 19:48:07 published md init-02 1399B
+# 19:48:07 loaded md tgt-03 -> b'tgt-03'
+# 19:48:07 xfer handle ready for tgt-03
+# 19:48:07 peer ready tgt-03
+{"batch": 8, "block_size": 16777216, "elapsed_s": 1.12734879180789, "gb_moved": 26.8435456, "gbps": 190.48972807751497, "gbs": 23.81121600968937, "group": "p23-dual", "host": "pdx02-zeno-02", "iters": 200, "name": "init-02", "nic_delta": {"enP2p1s0f0np0": {"port_rcv_data": 276861, "port_xmit_data": 2126856000, "rx_bytes": 8043, "tx_bytes": 26876}, "enP2p1s0f1np1": {"port_rcv_data": 277745, "port_xmit_data": 2126856000, "rx_bytes": 8979, "tx_bytes": 32508}, "enp1s0f0np0": {"port_rcv_data": 276427, "port_xmit_data": 2126856000, "rx_bytes": 17310, "tx_bytes": 63666}, "enp1s0f1np1": {"port_rcv_data": 277683, "port_xmit_data": 2126856000, "rx_bytes": 2082910, "tx_bytes": 345151}}, "peers": ["tgt-03"], "rail": "dual", "role": "initiator", "scheme": "pairwise", "ucx_net_devices": "rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1", "ucx_tls": "rc,ud,sm,self"}
+# 19:48:09 saved /home/aocsa/git/nixl-bench/results/p23-dual.json
+# 19:48:09 p23-dual 23.81121600968937 GB/s
+# 19:48:10 ==== m2o-t02 ====
+# 19:48:10 LOCAL python3 -u /home/aocsa/git/nixl-bench/sat.py --rail dual --role target --name tgt-02 --scheme manytoone --initiators init-01,init-03 --listen-port 5552 --group m2o-t02 --block-size 16777216 --batch 8 --iters 200 --warmup 50
+# 19:48:10 role=target name=tgt-02 scheme=manytoone group=m2o-t02 rail=dual UCX_NET_DEVICES=rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1 UCX_MAX_RMA_RAILS=4
+W0917 19:48:12.284361 4134837 ucx_utils.cpp:628] 1 NVIDIA GPU(s) were detected, but UCX CUDA support was not found! GPU memory is not supported.
+# 19:48:12 posted zeno-01/7 m2o-t02 initiator
+# 19:48:12 posted zeno-03/6 m2o-t02 initiator
+2026-09-17 19:48:12 NIXL INFO    _api.py:407 Backend UCX was instantiated
+2026-09-17 19:48:12 NIXL INFO    _api.py:285 Initialized NIXL agent: tgt-02
+# 19:48:12 agent tgt-02 listen=5552 host=pdx02-zeno-02
+LISTENING name=tgt-02 port=5552 host=pdx02-zeno-02
+# 19:48:12 registered 2 x 134217728B
+# 19:48:12 published md tgt-02 2038B
+# 19:48:12 published descs for init-01 334B
+# 19:48:12 published descs for init-03 334B
+# 19:48:14 loaded md init-01 -> b'init-01'
+# 19:48:14 loaded md init-03 -> b'init-03'
+# 19:48:17 rendezvous DONE init-01
+# 19:48:17 rendezvous DONE init-03
+{"group": "m2o-t02", "host": "pdx02-zeno-02", "name": "tgt-02", "nic_delta": {"enP2p1s0f0np0": {"port_rcv_data": 5469452761, "port_xmit_data": 728148, "rx_bytes": 420795, "tx_bytes": 864131}, "enP2p1s0f1np1": {"port_rcv_data": 5407705724, "port_xmit_data": 683447, "rx_bytes": 29545, "tx_bytes": 33783}, "enp1s0f0np0": {"port_rcv_data": 5169280806, "port_xmit_data": 774407, "rx_bytes": 1772932, "tx_bytes": 392391}, "enp1s0f1np1": {"port_rcv_data": 5212014190, "port_xmit_data": 741484, "rx_bytes": 2965983, "tx_bytes": 2006781}}, "rail": "dual", "role": "target", "scheme": "manytoone", "ucx_net_devices": "rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1", "ucx_tls": "rc,ud,sm,self", "wait_s": 3.4284146539866924}
+W0917 19:48:18.003294 4134837 nixl_agent.cpp:265] Communication thread has thrown an exception: std::bad_alloc
+# 19:48:18 saved /home/aocsa/git/nixl-bench/results/m2o-t02.json
+# 19:48:18 ==== o2m-i02 ====
+# 19:48:18 posted zeno-01/8 o2m-i02 target
+# 19:48:18 posted zeno-03/7 o2m-i02 target
+# 19:48:20 LOCAL python3 -u /home/aocsa/git/nixl-bench/sat.py --rail dual --role initiator --name init-02 --scheme onetomany --targets tgt-01@10.87.131.181:5551,tgt-03@10.87.131.183:5553 --listen-port 5552 --group o2m-i02 --block-size 16777216 --batch 8 --iters 200 --warmup 50
+# 19:48:20 role=initiator name=init-02 scheme=onetomany group=o2m-i02 rail=dual UCX_NET_DEVICES=rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1 UCX_MAX_RMA_RAILS=4
+W0917 19:48:21.945208 4135069 ucx_utils.cpp:628] 1 NVIDIA GPU(s) were detected, but UCX CUDA support was not found! GPU memory is not supported.
+2026-09-17 19:48:22 NIXL INFO    _api.py:407 Backend UCX was instantiated
+2026-09-17 19:48:22 NIXL INFO    _api.py:285 Initialized NIXL agent: init-02
+# 19:48:22 agent init-02 listen=5552 host=pdx02-zeno-02
+# 19:48:22 registered 134217728B batch=8
+# 19:48:22 published md init-02 1399B
+# 19:48:22 loaded md tgt-01 -> b'tgt-01'
+# 19:48:22 xfer handle ready for tgt-01
+# 19:48:22 loaded md tgt-03 -> b'tgt-03'
+# 19:48:22 xfer handle ready for tgt-03
+# 19:48:22 peer ready tgt-01
+# 19:48:22 peer ready tgt-03
+{"batch": 8, "block_size": 16777216, "elapsed_s": 2.049370627850294, "gb_moved": 53.6870912, "gbps": 209.5749415763436, "gbs": 26.19686769704295, "group": "o2m-i02", "host": "pdx02-zeno-02", "iters": 200, "name": "init-02", "nic_delta": {"enP2p1s0f0np0": {"port_rcv_data": 532720, "port_xmit_data": 4253712000, "rx_bytes": 21478, "tx_bytes": 425829}, "enP2p1s0f1np1": {"port_rcv_data": 529774, "port_xmit_data": 4253712000, "rx_bytes": 17488, "tx_bytes": 49197}, "enp1s0f0np0": {"port_rcv_data": 543914, "port_xmit_data": 4253712019, "rx_bytes": 2236699, "tx_bytes": 446965}, "enp1s0f1np1": {"port_rcv_data": 535292, "port_xmit_data": 4253712000, "rx_bytes": 1689845, "tx_bytes": 1014625}}, "peers": ["tgt-01", "tgt-03"], "rail": "dual", "role": "initiator", "scheme": "onetomany", "ucx_net_devices": "rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1", "ucx_tls": "rc,ud,sm,self"}
+W0917 19:48:24.860669 4135069 nixl_agent.cpp:265] Communication thread has thrown an exception: std::bad_alloc
+# 19:48:25 saved /home/aocsa/git/nixl-bench/results/o2m-i02.json
+# 19:48:25 summary:
+group,rail,gbs,gbps,host,ucx_net_devices
+p12-f0,f0,24.43568412992393,195.48547303939145,pdx02-zeno-02,rocep1s0f0:1,roceP2p1s0f0:1
+p12-f1,f1,24.436072439797528,195.48857951838022,pdx02-zeno-02,rocep1s0f1:1,roceP2p1s0f1:1
+p12-dual,dual,23.775451136572457,190.20360909257965,pdx02-zeno-02,rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1
+p13-f0,f0,24.420143889514705,195.36115111611764,pdx02-zeno-01,rocep1s0f0:1,roceP2p1s0f0:1
+p13-f1,f1,24.433931834184342,195.47145467347474,pdx02-zeno-01,rocep1s0f1:1,roceP2p1s0f1:1
+p13-dual,dual,23.76976201247816,190.1580960998253,pdx02-zeno-01,rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1
+p23-f0,f0,24.438804547773135,195.51043638218508,pdx02-zeno-02,rocep1s0f0:1,roceP2p1s0f0:1
+p23-f1,f1,24.435184134917137,195.4814730793371,pdx02-zeno-02,rocep1s0f1:1,roceP2p1s0f1:1
+p23-dual,dual,23.81121600968937,190.48972807751497,pdx02-zeno-02,rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1
+m2o-t02,dual,12.253910072147386,98.03128057717909,pdx02-zeno-01,rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1
+m2o-t02,dual,9.583654774680378,76.66923819744302,pdx02-zeno-03,rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1
+o2m-i02,dual,26.19686769704295,209.5749415763436,pdx02-zeno-02,rocep1s0f0:1,roceP2p1s0f0:1,rocep1s0f1:1,roceP2p1s0f1:1
+# 19:48:25 posted STOP

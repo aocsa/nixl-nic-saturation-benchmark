@@ -1,0 +1,51 @@
+# 00:21:18 wait workers {'zeno-03', 'zeno-01'} up to 3600s
+# 00:21:18 on zeno-01: curl -fsSL http://10.87.131.182:8775/flight-bench/start-worker.sh | bash -s zeno-01
+# 00:21:18 on zeno-03: curl -fsSL http://10.87.131.182:8775/flight-bench/start-worker.sh | bash -s zeno-03
+# 00:21:18 worker zeno-03 ready
+# 00:21:18 worker zeno-01 ready
+# 00:21:18 ==== iperf one twin ====
+# 00:21:18 posted zeno-01/0 iperf_server iperf-f0a
+# 00:21:20 LOCAL /home/aocsa/git/flight-bench/bin/iperf3 -c 10.87.131.64 -B 10.87.131.68 -p 5201 -t 10 -P 8 -J
+# 00:21:30 posted zeno-01/1 kill None
+# 00:21:30 saved /home/aocsa/git/flight-bench/results/iperf-f0a.json
+# 00:21:30 iperf-f0a 13.878186942542921 GB/s ok=True
+# 00:21:30 ==== iperf both twins ====
+# 00:21:30 posted zeno-01/2 iperf_server iperf-f0-both
+# 00:21:31 posted zeno-01/3 iperf_server iperf-f0-both
+# 00:21:33 LOCAL /home/aocsa/git/flight-bench/bin/iperf3 -c 10.87.131.64 -B 10.87.131.68 -p 5201 -t 10 -P 8 -J
+# 00:21:33 LOCAL /home/aocsa/git/flight-bench/bin/iperf3 -c 10.87.131.66 -B 10.87.131.70 -p 5202 -t 10 -P 8 -J
+# 00:21:43 posted zeno-01/4 kill None
+# 00:21:43 saved /home/aocsa/git/flight-bench/results/iperf-f0-both.json
+# 00:21:43 iperf-f0-both 21.800494253118863 GB/s ok=True
+# 00:21:43 ==== one-to-one DoPut ====
+# 00:21:43 posted zeno-01/5 server o2o-f0
+# 00:21:43 server ack zeno-01 rc=0
+# 00:21:45 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.64 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.68
+# 00:21:45 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.66 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.70
+# 00:21:47 posted zeno-01/6 kill None
+# 00:21:47 saved /home/aocsa/git/flight-bench/results/o2o-f0.json
+# 00:21:47 ==== one-to-many DoPut ====
+# 00:21:47 posted zeno-01/7 server o2m-f0
+# 00:21:48 server ack zeno-01 rc=0
+# 00:21:49 posted zeno-03/0 server o2m-f0
+# 00:21:50 server ack zeno-03 rc=0
+# 00:21:51 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.64 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.68
+# 00:21:51 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.66 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.70
+# 00:21:51 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.72 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.68
+# 00:21:51 CLIENT /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-benchmark -server_host=10.87.131.74 -server_port=31337 -transport=grpc -test_put -records_per_batch=65536 -records_per_stream=67108864 -num_streams=8 -num_threads=8 -num_perf_runs=1 BIND_ADDR=10.87.131.70
+# 00:21:55 posted zeno-01/8 kill None
+# 00:21:55 posted zeno-03/1 kill None
+# 00:21:55 saved /home/aocsa/git/flight-bench/results/o2m-f0.json
+# 00:21:55 ==== many-to-one DoPut ====
+# 00:21:55 SERVER /home/aocsa/git/flight-bench/prefix/bin/arrow-flight-perf-server -server_host=10.87.131.68 -port=31337 -transport=grpc
+# 00:21:57 posted zeno-01/9 clients m2o-f0
+# 00:21:57 posted zeno-03/2 clients m2o-f0
+# 00:22:02 saved /home/aocsa/git/flight-bench/results/m2o-f0.json
+# 00:22:02 summary:
+group,scheme,gbs,gbps,ok,notes
+iperf-f0a,iperf-one-twin,13.878186942542921,111.02549554034337,True,
+iperf-f0-both,iperf-both-twins,21.800494253118863,174.4039540249509,True,
+o2o-f0,one-to-one,13.343038230505055,106.74430584404044,True,02->01 f0 both twins
+o2m-f0,one-to-many,21.5870832826704,172.6966662613632,True,02->01+03 f0
+m2o-f0,many-to-one,13.837874361105179,110.70299488884143,True,01+03->02 f0
+# 00:22:02 posted STOP

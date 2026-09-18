@@ -1,0 +1,30 @@
+{
+  "bind": "10.87.131.68",
+  "dest": "10.87.131.64",
+  "eth_tx_gb": {
+    "enP2p1s0f0np0": 0.002634853,
+    "enP2p1s0f1np1": 0.000577563,
+    "enp1s0f0np0": 139.845972497,
+    "enp1s0f1np1": 0.004898545
+  },
+  "f0_tx": {
+    "both_twins": false,
+    "enP2p1s0f0np0_gb": 0.002634853,
+    "enp1s0f0np0_gb": 139.845972497,
+    "f0_sum_gb": 139.84860734999998
+  },
+  "gbps": 111.02549554034337,
+  "gbs": 13.878186942542921,
+  "group": "iperf-f0a",
+  "ib_xmit_gb": {
+    "enP2p1s0f0np0": 0.0,
+    "enP2p1s0f1np1": 0.0,
+    "enp1s0f0np0": 0.0,
+    "enp1s0f1np1": 0.0
+  },
+  "ok": true,
+  "rc": 0,
+  "scheme": "iperf-one-twin",
+  "stderr": "",
+  "stdout": "79,\n\t\t\t\t\t\"seconds\":\t10.001571,\n\t\t\t\t\t\"bytes\":\t19835125760,\n\t\t\t\t\t\"bits_per_second\":\t15865278175.012665,\n\t\t\t\t\t\"sender\":\ttrue\n\t\t\t\t}\n\t\t\t}, {\n\t\t\t\t\"sender\":\t{\n\t\t\t\t\t\"socket\":\t15,\n\t\t\t\t\t\"start\":\t0,\n\t\t\t\t\t\"end\":\t10.001571,\n\t\t\t\t\t\"seconds\":\t10.001571,\n\t\t\t\t\t\"bytes\":\t9901178880,\n\t\t\t\t\t\"bits_per_second\":\t7919698919.299778,\n\t\t\t\t\t\"retransmits\":\t0,\n\t\t\t\t\t\"max_snd_cwnd\":\t2004352,\n\t\t\t\t\t\"max_snd_wnd\":\t4568064,\n\t\t\t\t\t\"max_rtt\":\t1282,\n\t\t\t\t\t\"min_rtt\":\t1142,\n\t\t\t\t\t\"mean_rtt\":\t1202,\n\t\t\t\t\t\"sender\":\ttrue\n\t\t\t\t},\n\t\t\t\t\"receiver\":\t{\n\t\t\t\t\t\"socket\":\t15,\n\t\t\t\t\t\"start\":\t0,\n\t\t\t\t\t\"end\":\t10.001779,\n\t\t\t\t\t\"seconds\":\t10.001571,\n\t\t\t\t\t\"bytes\":\t9897639936,\n\t\t\t\t\t\"bits_per_second\":\t7916703567.2353878,\n\t\t\t\t\t\"sender\":\ttrue\n\t\t\t\t}\n\t\t\t}, {\n\t\t\t\t\"sender\":\t{\n\t\t\t\t\t\"socket\":\t17,\n\t\t\t\t\t\"start\":\t0,\n\t\t\t\t\t\"end\":\t10.001571,\n\t\t\t\t\t\"seconds\":\t10.001571,\n\t\t\t\t\t\"bytes\":\t19860291584,\n\t\t\t\t\t\"bits_per_second\":\t15885737617.82024,\n\t\t\t\t\t\"retransmits\":\t0,\n\t\t\t\t\t\"max_snd_cwnd\":\t3122852,\n\t\t\t\t\t\"max_snd_wnd\":\t5643776,\n\t\t\t\t\t\"max_rtt\":\t647,\n\t\t\t\t\t\"min_rtt\":\t550,\n\t\t\t\t\t\"mean_rtt\":\t598,\n\t\t\t\t\t\"sender\":\ttrue\n\t\t\t\t},\n\t\t\t\t\"receiver\":\t{\n\t\t\t\t\t\"socket\":\t17,\n\t\t\t\t\t\"start\":\t0,\n\t\t\t\t\t\"end\":\t10.001779,\n\t\t\t\t\t\"seconds\":\t10.001571,\n\t\t\t\t\t\"bytes\":\t19858063360,\n\t\t\t\t\t\"bits_per_second\":\t15883624991.114079,\n\t\t\t\t\t\"sender\":\ttrue\n\t\t\t\t}\n\t\t\t}, {\n\t\t\t\t\"sender\":\t{\n\t\t\t\t\t\"socket\":\t19,\n\t\t\t\t\t\"start\":\t0,\n\t\t\t\t\t\"end\":\t10.001571,\n\t\t\t\t\t\"seconds\":\t10.001571,\n\t\t\t\t\t\"bytes\":\t19813105664,\n\t\t\t\t\t\"bits_per_second\":\t15847994811.215158,\n\t\t\t\t\t\"retransmits\":\t0,\n\t\t\t\t\t\"max_snd_cwnd\":\t2773880,\n\t\t\t\t\t\"max_snd_wnd\":\t5590528,\n\t\t\t\t\t\"max_rtt\":\t775,\n\t\t\t\t\t\"min_rtt\":\t588,\n\t\t\t\t\t\"mean_rtt\":\t728,\n\t\t\t\t\t\"sender\":\ttrue\n\t\t\t\t},\n\t\t\t\t\"receiver\":\t{\n\t\t\t\t\t\"socket\":\t19,\n\t\t\t\t\t\"start\":\t0,\n\t\t\t\t\t\"end\":\t10.001779,\n\t\t\t\t\t\"seconds\":\t10.001571,\n\t\t\t\t\t\"bytes\":\t19809959936,\n\t\t\t\t\t\"bits_per_second\":\t15845149096.775682,\n\t\t\t\t\t\"sender\":\ttrue\n\t\t\t\t}\n\t\t\t}],\n\t\t\"sum_sent\":\t{\n\t\t\t\"start\":\t0,\n\t\t\t\"end\":\t10.001571,\n\t\t\t\"seconds\":\t10.001571,\n\t\t\t\"bytes\":\t138828578816,\n\t\t\t\"bits_per_second\":\t111045417817.66084,\n\t\t\t\"retransmits\":\t0,\n\t\t\t\"sender\":\ttrue\n\t\t},\n\t\t\"sum_received\":\t{\n\t\t\t\"start\":\t0,\n\t\t\t\"end\":\t10.001779,\n\t\t\t\"seconds\":\t10.001779,\n\t\t\t\"bytes\":\t138806558720,\n\t\t\t\"bits_per_second\":\t111025495540.34337,\n\t\t\t\"sender\":\ttrue\n\t\t},\n\t\t\"cpu_utilization_percent\":\t{\n\t\t\t\"host_total\":\t121.9525475550879,\n\t\t\t\"host_user\":\t1.8658437104032422,\n\t\t\t\"host_system\":\t120.08670384468468,\n\t\t\t\"remote_total\":\t336.16015010110186,\n\t\t\t\"remote_user\":\t3.3967313057500093,\n\t\t\t\"remote_system\":\t332.76342879356019\n\t\t},\n\t\t\"sender_tcp_congestion\":\t\"cubic\",\n\t\t\"receiver_tcp_congestion\":\t\"cubic\"\n\t}\n}\n"
+}

@@ -1,0 +1,117 @@
+{
+  "eth_delta": {
+    "enP2p1s0f0np0": {
+      "port_rcv_data": 0,
+      "port_xmit_data": 0,
+      "rx_bytes": 19896984,
+      "tx_bytes": 34689276857
+    },
+    "enP2p1s0f1np1": {
+      "port_rcv_data": 0,
+      "port_xmit_data": 0,
+      "rx_bytes": 23627,
+      "tx_bytes": 81465
+    },
+    "enp1s0f0np0": {
+      "port_rcv_data": 0,
+      "port_xmit_data": 0,
+      "rx_bytes": 16893690,
+      "tx_bytes": 34698524753
+    },
+    "enp1s0f1np1": {
+      "port_rcv_data": 0,
+      "port_xmit_data": 0,
+      "rx_bytes": 2776478,
+      "tx_bytes": 2076995
+    }
+  },
+  "eth_rx_gb": {
+    "enP2p1s0f0np0": 0.019896984,
+    "enP2p1s0f1np1": 2.3627e-05,
+    "enp1s0f0np0": 0.01689369,
+    "enp1s0f1np1": 0.002776478
+  },
+  "eth_tx_gb": {
+    "enP2p1s0f0np0": 34.689276857,
+    "enP2p1s0f1np1": 8.1465e-05,
+    "enp1s0f0np0": 34.698524753,
+    "enp1s0f1np1": 0.002076995
+  },
+  "f0_tx": {
+    "both_twins": true,
+    "enP2p1s0f0np0_gb": 34.689276857,
+    "enp1s0f0np0_gb": 34.698524753,
+    "f0_sum_gb": 69.38780161
+  },
+  "gbps": 172.6966662613632,
+  "gbps_sum": 172.6966662613632,
+  "gbs": 21.5870832826704,
+  "gbs_sum": 21.5870832826704,
+  "group": "o2m-f0",
+  "host": "pdx02-zeno-02",
+  "ib_rcv_gb": {
+    "enP2p1s0f0np0": 0.0,
+    "enP2p1s0f1np1": 0.0,
+    "enp1s0f0np0": 0.0,
+    "enp1s0f1np1": 0.0
+  },
+  "ib_xmit_gb": {
+    "enP2p1s0f0np0": 0.0,
+    "enP2p1s0f1np1": 0.0,
+    "enp1s0f0np0": 0.0,
+    "enp1s0f1np1": 0.0
+  },
+  "notes": "02->01+03 f0",
+  "ok": true,
+  "results": [
+    {
+      "bind_addr": "10.87.131.68",
+      "bytes": 17179869184,
+      "gbps": 45.841349589747814,
+      "gbs": 5.730168698718477,
+      "mib_s": 5464.71,
+      "nanos": 2998143700,
+      "port": 31337,
+      "raw_tail": "Testing method: DoPut\nUsing standalone TCP server\nServer host: 10.87.131.64\nServer port: 31337\nNumber of perf runs: 1\nNumber of concurrent gets/puts: 8\nBatch size: 2097152\nBatches written: 8192\nBytes written: 17179869184\nNanos: 2998143700\nSpeed: 5464.71 MB/s\nThroughput: 2732.36 batches/s\nLatency mean: 2643 us\nLatency quantile=0.5: 2554 us\nLatency quantile=0.95: 5838 us\nLatency quantile=0.99: 9454 us\nLatency max: 27713 us\n",
+      "rc": 0,
+      "server_host": "10.87.131.64"
+    },
+    {
+      "bind_addr": "10.87.131.70",
+      "bytes": 17179869184,
+      "gbps": 41.24373485432039,
+      "gbs": 5.155466856790048,
+      "mib_s": 4916.64,
+      "nanos": 3332359544,
+      "port": 31337,
+      "raw_tail": "Testing method: DoPut\nUsing standalone TCP server\nServer host: 10.87.131.66\nServer port: 31337\nNumber of perf runs: 1\nNumber of concurrent gets/puts: 8\nBatch size: 2097152\nBatches written: 8192\nBytes written: 17179869184\nNanos: 3332359544\nSpeed: 4916.64 MB/s\nThroughput: 2458.32 batches/s\nLatency mean: 2991 us\nLatency quantile=0.5: 2855 us\nLatency quantile=0.95: 6659 us\nLatency quantile=0.99: 10691 us\nLatency max: 26432 us\n",
+      "rc": 0,
+      "server_host": "10.87.131.66"
+    },
+    {
+      "bind_addr": "10.87.131.68",
+      "bytes": 17179869184,
+      "gbps": 43.6714474719883,
+      "gbs": 5.458930933998538,
+      "mib_s": 5206.04,
+      "nanos": 3147112391,
+      "port": 31337,
+      "raw_tail": "Testing method: DoPut\nUsing standalone TCP server\nServer host: 10.87.131.72\nServer port: 31337\nNumber of perf runs: 1\nNumber of concurrent gets/puts: 8\nBatch size: 2097152\nBatches written: 8192\nBytes written: 17179869184\nNanos: 3147112391\nSpeed: 5206.04 MB/s\nThroughput: 2603.02 batches/s\nLatency mean: 2703 us\nLatency quantile=0.5: 2570 us\nLatency quantile=0.95: 6062 us\nLatency quantile=0.99: 10463 us\nLatency max: 25208 us\n",
+      "rc": 0,
+      "server_host": "10.87.131.72"
+    },
+    {
+      "bind_addr": "10.87.131.70",
+      "bytes": 17179869184,
+      "gbps": 41.94013434530668,
+      "gbs": 5.242516793163335,
+      "mib_s": 4999.65,
+      "nanos": 3277027020,
+      "port": 31337,
+      "raw_tail": "Testing method: DoPut\nUsing standalone TCP server\nServer host: 10.87.131.74\nServer port: 31337\nNumber of perf runs: 1\nNumber of concurrent gets/puts: 8\nBatch size: 2097152\nBatches written: 8192\nBytes written: 17179869184\nNanos: 3277027020\nSpeed: 4999.65 MB/s\nThroughput: 2499.83 batches/s\nLatency mean: 2984 us\nLatency quantile=0.5: 2746 us\nLatency quantile=0.95: 6796 us\nLatency quantile=0.99: 11734 us\nLatency max: 36912 us\n",
+      "rc": 0,
+      "server_host": "10.87.131.74"
+    }
+  ],
+  "scheme": "one-to-many"
+}

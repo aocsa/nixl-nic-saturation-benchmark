@@ -1,0 +1,9 @@
+region            = "us-east-1"
+vpc_id            = "vpc-xxxxxxxx"
+subnet_id         = "subnet-xxxxxxxx"
+key_name          = "your-keypair"
+node_count        = 3
+instance_type     = "g7e.8xlarge"
+allowed_ssh_cidr  = "0.0.0.0/0"
+associate_hub_eip = true
+# ami_id          = "ami-..."  # optional DLAMI
