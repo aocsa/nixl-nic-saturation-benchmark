@@ -1,0 +1,33 @@
+# Host / CX-7 IP map (same as nixl-bench). Data plane is TCP on CX-7.
+export FLIGHT_BENCH_ROOT="${FLIGHT_BENCH_ROOT:-/home/aocsa/git/flight-bench}"
+export PATH="${FLIGHT_BENCH_ROOT}/prefix/bin:${HOME}/.local/bin:${PATH}"
+export LD_LIBRARY_PATH="${FLIGHT_BENCH_ROOT}/prefix/lib:${FLIGHT_BENCH_ROOT}/lib:${LD_LIBRARY_PATH:-}"
+
+export FLIGHT_RV="${FLIGHT_RV:-http://10.87.131.182:8776}"
+export FLIGHT_FILES="${FLIGHT_FILES:-http://10.87.131.182:8775}"
+export FLIGHT_PORT="${FLIGHT_PORT:-31337}"
+
+export ZENO01_MGMT=10.87.131.181
+export ZENO02_MGMT=10.87.131.182
+export ZENO03_MGMT=10.87.131.183
+
+# rail-f0 (tor-2): two twins of one 200G QSFP
+export ZENO01_F0_A=10.87.131.64
+export ZENO01_F0_B=10.87.131.66
+export ZENO02_F0_A=10.87.131.68
+export ZENO02_F0_B=10.87.131.70
+export ZENO03_F0_A=10.87.131.72
+export ZENO03_F0_B=10.87.131.74
+
+export ZENO01_F1_A=10.87.131.65
+export ZENO01_F1_B=10.87.131.67
+export ZENO02_F1_A=10.87.131.69
+export ZENO02_F1_B=10.87.131.71
+export ZENO03_F1_A=10.87.131.73
+export ZENO03_F1_B=10.87.131.75
+
+# Flight DoPut payload (32 B/record). 65536 rec = 2 MiB batches.
+export FLIGHT_RECORDS_PER_BATCH="${FLIGHT_RECORDS_PER_BATCH:-65536}"
+export FLIGHT_RECORDS_PER_STREAM="${FLIGHT_RECORDS_PER_STREAM:-67108864}"
+export FLIGHT_NUM_STREAMS="${FLIGHT_NUM_STREAMS:-8}"
+export FLIGHT_NUM_THREADS="${FLIGHT_NUM_THREADS:-8}"

@@ -108,6 +108,16 @@ cp profiles/spark-zeno.env inventory.env
 
 [`docs/scoring.md`](docs/scoring.md) · [`docs/lessons.md`](docs/lessons.md)
 
+## Write-ups from the Spark runs
+
+| Doc | Contents |
+|---|---|
+| [`docs/nixl-bandwidth-targets.md`](docs/nixl-bandwidth-targets.md) | Pairwise 24.42–24.44 GB/s, dual-rail shortfall, 12.5 / 25.0 / 31.5 caps |
+| [`docs/zeno-fabric-topology.md`](docs/zeno-fabric-topology.md) | LLDP: f0→tor-2, f1→tor-1, 400G→2×200G on the SN5610 |
+| [`docs/flight-vs-nixl.md`](docs/flight-vs-nixl.md) | iperf3 13.88 / 21.80, Flight 13.34 / 21.59 / 13.84, how to rerun |
+| [`results/spark-zeno/`](results/spark-zeno/) | JSON, logs, `COMPARE.md` |
+| [`archive/spark-original/`](archive/spark-original/) | Exact `nixl-bench` and `flight-bench` scripts from those runs (no binaries) |
+
 ## Similar AWS shapes
 
 Anything with **EFA + ~100 Gbps** can use `profiles/aws-g7e.env` with `CAP_GBS` adjusted. `g7e.8xlarge` is 1× RTX PRO 6000 96 GB, 32 vCPU, 256 GiB, **100 Gbps**, **1 EFA**, **no GPUDirect RDMA**. Larger G7e (`12xlarge`+) add GDR and more EFA bandwidth; raise `CAP_GBS` and `instance_type` in terraform.
